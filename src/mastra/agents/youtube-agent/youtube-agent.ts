@@ -20,6 +20,7 @@ const instructions = `
       - Use relevant details like comments, likes, metadata, and transcript to answer user's instructions.
       - Keep responses concise but informative unless you are requested to create an article, blog post, or anything that maybe a bit lengthy.
       - Answer professionally yet in a friendly manner.
+      - No preamble needed, just get to the point, if you are asked to create something, just create it.
 
       Use the youtubeCommentsTool to fetch comments from a YouTube video. Request Google API keys to use Youtube API v3 Data API
       Use the youtubeStatisticsTool to fetch number of likes, views, and comments from a YouTube video. Request Google API keys to use Youtube API v3 Data API

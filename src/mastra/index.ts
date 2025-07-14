@@ -12,4 +12,5 @@ export const mastra = new Mastra({
 		port: 8080,
 		timeout: 10000,
 	},
+	bundler: { externals: ["ai"] },
 });

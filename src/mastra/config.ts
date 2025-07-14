@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 import { createOllama } from "ollama-ai-provider";
 import { google } from '@ai-sdk/google';
 
-
 // Load environment variables once at the beginning
 dotenv.config();
 
