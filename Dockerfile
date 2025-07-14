@@ -21,16 +21,16 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies
-RUN pnpm install
+RUN npm install
 
 # Copy the rest of the application
 COPY . .
 
 # Build the project
-RUN pnpm run build
+RUN npm run build
 
 # Override the default entrypoint
 ENTRYPOINT ["/bin/sh", "-c"]
 
 # Command to run the app
-CMD ["node .mastra/output/index.mjs"]
+CMD ["npm run dev"]

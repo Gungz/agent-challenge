@@ -4,15 +4,15 @@
       "id": "agents",
       "args": {
         "gpu": true,
-        "image": "docker.io/yourusername/agent-challenge:latest",
+        "image": "docker.io/gungz/agent-challenge:latest",
         "expose": [
           {
             "port": 8080
           }
-        ],
-        "entrypoint": [
-          "/bin/sh"
-        ]
+        ], 
+        "env": {
+          "GOOGLE_GENERATIVE_AI_API_KEY": "<YOUR_GOOGLE_GENERATIVE_AI_API_KEY>"
+        }
       },
       "type": "container/run"
     }

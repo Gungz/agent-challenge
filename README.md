@@ -237,7 +237,9 @@ We have included a Nosana job definition at <./nos_job_def/nosana_mastra.json>, 
   - Your agent running on Nosana
   - Key features and functionality
   - Real-world use case demonstration
-- Upload to YouTube, Loom, or similar platform
+- Upload to YouTube, Loom, or similar platform  
+
+   (**see bottom of this README**)
 
 #### 5. Documentation
 
@@ -246,7 +248,9 @@ We have included a Nosana job definition at <./nos_job_def/nosana_mastra.json>, 
   - Setup instructions
   - Environment variables required
   - Docker build and run commands
-  - Example usage
+  - Example usage  
+  
+  (**see bottom of this README**)
 
 ### Submission Process
 
@@ -335,3 +339,48 @@ All prizes are paid out directly to participants on [SuperTeam](https://supertea
 
 Good luck, builders! We can't wait to see the innovative AI agents you create for the Nosana ecosystem.
 **Happy Building!**
+
+## Agent Documentation
+For this challenge, I have created an agent that can interact with Youtube video. 
+1. It can get statistics about the video, like the number of views, likes, comments, and more. 
+2. It can also get the transcript of the video and the comments. 
+3. It can also get the comments of the video. 
+4. It can also get title and channel of the video.
+
+Using the tool, the agent can be used to get sentiments about the video, to get summary of what is discussed in video, to ask questions about the video, to create blog post or article from video, to create quiz from video, and more.
+
+### Setup Instruction (to run on local)
+1. Clone the repository and navigate to the project directory.
+2. Install the dependencies using `npm install`.
+3. Create a .env file in the root directory and replace the following environment variables with your own values:
+   - `GOOGLE_GENERATIVE_AI_API_KEY`: Your Google API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+4. Run the agent using `npm run dev`.
+5. Prepare your Youtube Data API key (follow this [link](https://docs.themeum.com/tutor-lms/tutorials/get-youtube-api-key/)) and youtube-transcript.io API key (sign up [here](https://www.youtube-transcript.io/), login, then navigate to this [link](https://www.youtube-transcript.io/profile) to get your API key).  
+Agent will ask for these keys when it is running but it doesn't need to be setup as env variable.
+
+### Setup Instruction (to run on Nosana)
+1. Clone the repository and navigate to the project directory.
+2. Run `docker build -t agent-challenge .` to build the Docker image.
+3. Push the Docker image to Docker Hub using `docker push <your-docker-hub-username>/agent-challenge`.
+4. Deploy to nosana by using either dashboard or CLI (use `nos_job_def/nosana_mastra.json`), change the value of `GOOGLE_GENERATIVE_AI_API_KEY` to your Google API key from [Google AI Studio](https://aistudio.google.com/app/apikey).  
+**P.S.**: I have tried to deploy this agent using [confidential job](https://docs.nosana.io/inference/confidential.html) to not expose my API Key during deployment but it is not working and I am getting below error.
+```
+Node has found job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT
+✔ Node has claimed job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT
+Job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT is starting
+✔ Flow 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT is initialized
+✔ Job definition retrived successfully
+✔ Job definition validated successfully
+✔ Flow 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT started
+Job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT started successfully
+Flow 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT is running
+Running action container/run, for flow 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT operation agents
+Pulling image gungz/agent-challenge:latest
+Error pulling image gungz/agent-challenge:latest
+Action container/run, for flow 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT operation agents failed
+Waiting for job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT to finish
+Job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT is finishing
+```
+
+### Demo Video
+Watch the demo [here](https://youtu.be/-_lC20lxq6Y).
