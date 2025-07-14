@@ -362,7 +362,7 @@ Agent will ask for these keys when it is running but it doesn't need to be setup
 1. Clone the repository and navigate to the project directory.
 2. Run `docker build -t agent-challenge .` to build the Docker image.
 3. Push the Docker image to Docker Hub using `docker push <your-docker-hub-username>/agent-challenge`.
-4. Deploy to nosana by using either dashboard or CLI (use `nos_job_def/nosana_mastra.json`), change the value of `GOOGLE_GENERATIVE_AI_API_KEY` to your Google API key from [Google AI Studio](https://aistudio.google.com/app/apikey).  
+4. Deploy to nosana by using either dashboard or CLI (use `nos_job_def/nosana_mastra.json`), change the value of `GOOGLE_GENERATIVE_AI_API_KEY` to your Google API key from [Google AI Studio](https://aistudio.google.com/app/apikey). If required, change the `image` to your Docker image as well.
 **P.S.**: I have tried to deploy this agent using [confidential job](https://docs.nosana.io/inference/confidential.html) to not expose my API Key during deployment but it is not working and I am getting below error.
 ```
 Node has found job 3ysRP1zwJbBcN65UuhmyegjRzB6UYzSCqhxSWwW63mQT
